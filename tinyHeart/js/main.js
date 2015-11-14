@@ -22,6 +22,8 @@ var mx;
 var my;
 
 var babyTail = [];
+var babyEye = [];
+var babyBody = [];
 document.body.onload = game;
 function game()
 {
@@ -65,6 +67,16 @@ function init()
 		babyTail[i] = new Image();
 		babyTail[i].src = "./src/babyTail"+i+".png";
 	}
+	babyEye[0] = new Image();
+	babyEye[0].src = "./src/babyEye0.png";
+	babyEye[1] = new Image();
+	babyEye[1].src = "./src/babyEye1.png";
+
+	for (var i = 0; i < 20; i++) {
+		babyBody[i] = new Image();
+		babyBody[i].src = "./src/babyFade"+i+".png";
+	}
+	
 } 
 function gameloop()
 {
