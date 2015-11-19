@@ -24,6 +24,11 @@ var my;
 var babyTail = [];
 var babyEye = [];
 var babyBody = [];
+
+var momTail = [];
+var momEye = [];
+
+var data;
 document.body.onload = game;
 function game()
 {
@@ -77,6 +82,16 @@ function init()
 		babyBody[i].src = "./src/babyFade"+i+".png";
 	}
 	
+	for (var i = 0; i < 8; i++) {
+		momTail[i] = new Image();
+		momTail[i].src = "./src/bigTail"+i+".png";
+	}
+	for (var i = 0; i < 2; i++) {
+		momEye[i] = new Image();
+		momEye[i].src = "./src/bigEye"+i+".png";
+	}
+	data = new dataObj();
+
 } 
 function gameloop()
 {
@@ -93,8 +108,12 @@ function gameloop()
 
 	ctx1.clearRect(0, 0, canWidth, canHeight);
 	mom.draw();
-	momFruitsCollosion();
 	baby.draw();
+	momFruitsCollosion();
+	momBabyCollision();
+
+	data.draw();
+	
 }
 function onMouseMove(e)
 {
