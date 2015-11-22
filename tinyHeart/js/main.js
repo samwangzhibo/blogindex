@@ -27,8 +27,12 @@ var babyBody = [];
 
 var momTail = [];
 var momEye = [];
+var momBodyOra = [];
+var momBodyBlue = [];
 
 var data;
+var wave;
+var halo;
 document.body.onload = game;
 function game()
 {
@@ -91,10 +95,22 @@ function init()
 		momEye[i].src = "./src/bigEye"+i+".png";
 	}
 	data = new dataObj();
+	for (var i = 0; i < 8; i++) {
+		 	momBodyOra[i]  = new Image();
+		 	momBodyBlue[i]  = new Image();
+		 	momBodyOra[i].src  = "./src/bigSwim"+i+".png";
+		 	momBodyBlue[i].src  = "./src/bigSwimBlue"+i+".png";
+		}
+	ctx1.font = "30px Verdana";
+	ctx1.textAlign = "center"; // left center left
 
+	wave = new waveObj();
+	wave.init();
+
+	halo = new haloObj();
+	halo.init();
 } 
-function gameloop()
-{
+function gameloop(){
 	requestAnimFrame(gameloop);//setInterval , setTimeout() , frame per second
 	var now = Date.now();
 	deltaTime = now -lastTime;
@@ -113,14 +129,18 @@ function gameloop()
 	momBabyCollision();
 
 	data.draw();
-	
+	wave.draw();
+	halo.draw();
 }
 function onMouseMove(e)
 {
+	if(!data.gameOver){
 		if(e.offSetX || e.layerX)
 		{
 			mx = e.offSetX == undefined ? e.layerX : e.offSetX;
 			my = e.offSetY == undefined ? e.layerY : e.offSetY;
 
 		}
+	}
+		
 }
