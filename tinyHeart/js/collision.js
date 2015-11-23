@@ -18,7 +18,11 @@ function momFruitsCollosion()
 					if(fruit.fruitType[i] == "blue")//blue
 					{
 						data.double = 2;
+						data.blueTemp++;
+					}else{
+						data.yellowTemp++;
 					}
+					
 					wave.born(fruit.x[i],fruit.y[i]);
 				}
 		}
@@ -42,6 +46,9 @@ function momBabyCollision()
 		data.addScore();
 		//draw halo
 		halo.born(baby.x, baby.y);
+
+		data.yellowCount = data.yellowTemp;
+		data.blueCount = data.blueTemp;
 	}
 	}
 	

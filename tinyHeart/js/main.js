@@ -33,6 +33,9 @@ var momBodyBlue = [];
 var data;
 var wave;
 var halo;
+
+var dust;
+var dustPic = [];
 document.body.onload = game;
 function game()
 {
@@ -109,6 +112,15 @@ function init()
 
 	halo = new haloObj();
 	halo.init();
+
+	for (var i = 0; i < 7; i++) {
+		dustPic[i] = new Image();
+		dustPic[i].src = "./src/dust"+ i +".png";
+	}
+
+	dust = new dustObj();
+	dust.init();
+
 } 
 function gameloop(){
 	requestAnimFrame(gameloop);//setInterval , setTimeout() , frame per second
@@ -131,6 +143,7 @@ function gameloop(){
 	data.draw();
 	wave.draw();
 	halo.draw();
+	dust.draw();
 }
 function onMouseMove(e)
 {

@@ -5,6 +5,11 @@ var dataObj = function()
 	this.score = 0;
 	this.gameOver = false;
 	this.alpha = 0;
+	
+	this.yellowTemp = 0;
+	this.blueTemp = 0;
+	this.yellowCount = 0;
+	this.blueCount = 0;
 }
 
 dataObj.prototype.draw = function()
@@ -16,7 +21,19 @@ dataObj.prototype.draw = function()
 	ctx1.shadowBlur = 10;
 	ctx1.shadowColor = "white";
 	ctx1.fillStyle = "white";
-	ctx1.fillText("SCORE: "+ this.score, w * 0.5, h - 20);
+	//ctx1.fillText("SCORE: "+ this.score, w * 0.5, h - 20);//绘制分数
+	ctx1.fillText("SCORE: "+ this.score, w * 0.5, h - 540);
+
+	var yellow = new Image();
+	yellow.src = "./src/fruit.png";
+	ctx1.drawImage(yellow, w * 0.35, h - 60);
+	ctx1.fillText(" : "+ this.yellowCount, w * 0.42, h - 40);
+
+	var blue = new Image();
+	blue.src = "./src/blue.png";
+	ctx1.drawImage(blue, w * 0.58, h - 60);
+	ctx1.fillText(" : "+ this.blueCount, w * 0.65, h - 40);
+
 
 	if(this.gameOver)
 	{
