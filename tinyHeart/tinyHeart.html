@@ -5,7 +5,20 @@
 			<title>爱心鱼</title>
 			<style type="text/css">
 			body {
-					padding-top: 10px
+					padding-top: 10px;
+					background: #faf8ef;					
+			}
+			p {
+				color: #776e65;
+				font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+				font-size: 18px;
+			}
+
+			strong, b {
+				font-weight: bold;
+			}
+			strong.important {
+				text-transform: uppercase;
 			}
 			.all_bg{
 				width: 800px;
@@ -33,15 +46,20 @@
 			</style>
 </head>
 <body>
- <p class="game-intro">
-    Created by samwangzhibo.</a> 
-    </p>
+<p class="game-explanation">
+      <strong class="important">How to play:</strong>小鱼需要水泡维持生命，大鱼去<strong class="important">吃水泡</strong>，然后回头去<strong class="important">触碰(喂给)小鱼</strong>，每次喂食可以获取得分，看你最终可以获的多少分
+</p>
+
 			<div class = "all_bg">
 					<div id = "allcanvas">
 							<canvas id = "canvas1" width = "800" height = "600"></canvas>
 							<canvas id = "canvas2" width = "800" height = "600"></canvas>
 					</div>
 			</div>
+	<p class="game-intro">
+    Created by
+	<a href="https://github.com/samwangzhibo">samwangzhibo.</a>
+    </p>
 			<script type="text/javascript" src="js/main.js"></script>
 			<script type="text/javascript" src="js/commonFunctions.js"></script>
 			<script type="text/javascript" src="js/background.js"></script>
